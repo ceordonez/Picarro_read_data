@@ -5,6 +5,7 @@ import pandas as pd
 import pdb
 import logging
 import os
+from config_file import dilution
 
 def read_picarro(path, first=True):
     for filename in os.listdir(path):
@@ -26,11 +27,20 @@ def read_picarro(path, first=True):
 
 def read_excel(path, filename):
     filename = os.path.join(path, filename)
-    data = pd.read_excel(filename, sheet_name='CH4-CO2 Bottle Method',
-                         skiprows= [0, 1, 2, 4],
-                         usecols = [1, 14, 16, 18, 20],
-                         names = ['Datetime', 'CH4_ppm', 'dCH4',
-                                  'CO2_ppm', 'dCO2'],
-                         parse_dates = [0], infer_datetime_format=True)
+
+    if dilution:
+        data = pd.read_excel(filename, sheet_name='Dilutions',
+                            skiprows= [0, 1, 2],
+                            usecols = [1, 16, 18, 20, 22],
+                            names = ['Datetime', 'CH4_ppm', 'dCH4',
+                                    'CO2_ppm', 'dCO2'],
+                            parse_dates = [0], infer_datetime_format=True)
+    else:
+        data = pd.read_excel(filename, sheet_name='CH4-CO2 Bottle Method',
+                            skiprows= [0, 1, 2, 4],
+                            usecols = [1, 14, 16, 18, 20],
+                            names = ['Datetime', 'CH4_ppm', 'dCH4',
+                                    'CO2_ppm', 'dCO2'],
+                            parse_dates = [0], infer_datetime_format=True)
 
     return data

@@ -11,7 +11,6 @@ from pandas.plotting import register_matplotlib_converters
 from config_file import lim_plot_var
 register_matplotlib_converters()
 mpl.use('tkAgg')
-#mpl.style.use('presentation')
 
 def make_plot(dataP, dataC):
     varplot = ('HRCH4_d', 'HRdCH4', 'CO2_d', 'dCO2')  # ['HPCH4_d', 'HPdCH4']
