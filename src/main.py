@@ -1,10 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import matplotlib.pyplot as plt
-import numpy as np
-
-from matplotlib.widgets import SpanSelector, Button
 from read_data import read_picarro, read_excel
 from plot_data import make_plot, span_plot
 from config_file import *
