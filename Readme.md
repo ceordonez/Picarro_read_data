@@ -10,9 +10,7 @@ pip3 install pipenv --user
 
 find the user directory used by pip3:
 
-```
-python -m site --user-base
-```
+    python -m site --user-base
 
 Add the user directory in the PATH environment variable
 
@@ -35,3 +33,6 @@ Configurate the config\_file.py document
 
 Execute python main.py or double click in the main.py file to run the scripts. 
 
+# Example
+
+![alt text](/Figures/Example-01.png?raw=true)

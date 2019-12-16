@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from read_data import read_picarro, read_excel
-from plot_data import make_plot, span_plot
+from src.read_data import read_picarro, read_excel
+from src.plot_data import make_plot, span_plot
+from src.transform_data import transform_data
+
 from config_file import *
-from transform_data import transform_data
 
 def main():
 
